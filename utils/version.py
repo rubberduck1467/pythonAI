@@ -1,4 +1,4 @@
-"""Small module to extract simple semantic version numbers from docstrings and format them and format them
+"""Small module to extract simple semantic version numbers from docstrings and format them
     Version: 1.0.0
 """
 
