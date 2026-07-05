@@ -10,6 +10,16 @@ class semVerNum:
 
     def format(self):
         return f"{self.major}.{self.minor}.{self.patch}"
-    
-bob = semVerNum(27,1,10)
-print(bob.format())
+
+def extractSemVer(docstring):
+    words = docstring.split()
+    consistent = map(lambda word: word.lower(), words)
+    found = False
+    for word in consistent:
+        if found:
+            strVer = word.split('.')
+            break
+        if "version" in word:
+            found = True
+
+    return semVerNum(*list(map (int, strVer)))
